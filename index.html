@@ -2,116 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Emergency Contacts</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 1rem;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
       color: #333;
     }
-    h2 {
-      color: #d62828;
-      margin-top: 1.5rem;
+    header {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid #023e8a;
     }
-    .contact-list, .first-aiders {
-      list-style: none;
-      padding: 0;
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
     }
-    .contact-item {
-      background: #fff;
-      margin: 0.5rem 0;
+    header i {
+      margin-right: 0.5rem;
+    }
+
+    .section {
       padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      color: #0077b6;
+      border-left: 5px solid #00b4d8;
+      padding-left: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
-    .contact-item span {
+    .card span {
       font-weight: bold;
-    }
-    a.call-btn {
-      text-decoration: none;
-      color: white;
-      background: #0077b6;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-    .first-aiders h3 {
-      margin: 1rem 0 0.5rem;
       font-size: 1rem;
-      color: #023e8a;
     }
+    .call-btn {
+      background: #00b4d8;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s;
+    }
+    .call-btn:hover {
+      background: #0077b6;
+    }
+
     details summary {
-      font-weight: bold;
-      background-color: #caf0f8;
-      padding: 0.6rem;
-      border-radius: 8px;
       cursor: pointer;
+      background: #caf0f8;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
       margin-top: 1rem;
     }
-    details ul {
-      margin: 0.5rem 0 0;
-      padding-left: 0;
+
+    details[open] summary {
+      background: #ade8f4;
     }
+
+    .first-aiders .card {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
     @media screen and (max-width: 600px) {
-      .contact-item {
+      .card {
         flex-direction: column;
         align-items: flex-start;
       }
-      a.call-btn {
+      .call-btn {
         margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
+<header>
+  <h1><i class="fas fa-phone-volume"></i> Emergency Contacts</h1>
+</header>
+
+<div class="section">
   <h2>Emergency Contact Person</h2>
-  <ul class="contact-list">
-    <li class="contact-item"><span>FADZLAN (SHO)</span> <a href="tel:0173242045" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>SUHAINI (SAFETY)</span> <a href="tel:0122170439" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>SABLI (PROD. GM)</span> <a href="tel:0129159026" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>ROCKY (TECH GM)</span> <a href="tel:0125191562" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>CARMEN (HRGA SH)</span> <a href="tel:0122087329" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-  </ul>
+  <div class="card"><span>FADZLAN (SHO)</span><a href="tel:0173242045" class="call-btn">Call</a></div>
+  <div class="card"><span>SUHAINI (SAFETY)</span><a href="tel:0122170439" class="call-btn">Call</a></div>
+  <div class="card"><span>SABLI (PROD. GM)</span><a href="tel:0129159026" class="call-btn">Call</a></div>
+  <div class="card"><span>ROCKY (TECH GM)</span><a href="tel:0125191562" class="call-btn">Call</a></div>
+  <div class="card"><span>CARMEN (HRGA SH)</span><a href="tel:0122087329" class="call-btn">Call</a></div>
+</div>
 
+<div class="section">
   <h2>Emergency Contact Line</h2>
-  <ul class="contact-list">
-    <li class="contact-item"><span>POLIS</span> <a href="tel:0351914022" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>BOMBA</span> <a href="tel:0355194444" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>HOSPITAL SHAH ALAM</span> <a href="tel:0355263000" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-    <li class="contact-item"><span>HOSPITAL KPJ S. ALAM</span> <a href="tel:0355431111" class="call-btn"><i class="fa fa-phone"></i> Call</a></li>
-  </ul>
+  <div class="card"><span>POLIS</span><a href="tel:0351914022" class="call-btn">Call</a></div>
+  <div class="card"><span>BOMBA</span><a href="tel:0355194444" class="call-btn">Call</a></div>
+  <div class="card"><span>HOSPITAL SHAH ALAM</span><a href="tel:0355263000" class="call-btn">Call</a></div>
+  <div class="card"><span>HOSPITAL KPJ S. ALAM</span><a href="tel:0355431111" class="call-btn">Call</a></div>
+</div>
 
+<div class="section">
   <h2>First Aider</h2>
   <div class="first-aiders">
     <details>
       <summary>Office</summary>
-      <ul class="contact-list">
-        <li class="contact-item"><span>ISKANDAR</span> <a href="tel:0125519162" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>NABILAH</span> <a href="tel:01126172729" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>SYUHADA</span> <a href="tel:0138770654" class="call-btn">Call</a></li>
-      </ul>
+      <div class="card"><span>ISKANDAR</span><a href="tel:0125519162" class="call-btn">Call</a></div>
+      <div class="card"><span>NABILAH</span><a href="tel:01126172729" class="call-btn">Call</a></div>
+      <div class="card"><span>SYUHADA</span><a href="tel:0138770654" class="call-btn">Call</a></div>
     </details>
 
     <details>
       <summary>Production</summary>
-      <ul class="contact-list">
-        <li class="contact-item"><span>AZRI</span> <a href="tel:01164571126" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>HAZIQ</span> <a href="tel:0182858507" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>DANIAL</span> <a href="tel:0176475122" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>FAZLY</span> <a href="tel:01124475393" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>TN. ARIS</span> <a href="tel:0165971774" class="call-btn">Call</a></li>
-        <li class="contact-item"><span>AZRUL</span> <a href="tel:0174558352" class="call-btn">Call</a></li>
-      </ul>
+      <div class="card"><span>AZRI</span><a href="tel:01164571126" class="call-btn">Call</a></div>
+      <div class="card"><span>HAZIQ</span><a href="tel:0182858507" class="call-btn">Call</a></div>
+      <div class="card"><span>DANIAL</span><a href="tel:0176475122" class="call-btn">Call</a></div>
+      <div class="card"><span>FAZLY</span><a href="tel:01124475393" class="call-btn">Call</a></div>
+      <div class="card"><span>TN. ARIS</span><a href="tel:0165971774" class="call-btn">Call</a></div>
+      <div class="card"><span>AZRUL</span><a href="tel:0174558352" class="call-btn">Call</a></div>
     </details>
   </div>
+</div>
 
 </body>
 </html>
